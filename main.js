@@ -6,6 +6,10 @@ let gridCount = DEFAULT_GRID_COUNT;
 const container = document.querySelector(".container");
 const btn = document.querySelector("#btn");
 
+function generateRandomChannel() {
+  return Math.floor(Math.random() * 256);
+}
+
 function renderSquares() {
   container.replaceChildren();
 
@@ -27,7 +31,7 @@ container.addEventListener(
   "mouseenter",
   (e) => {
     if (e.target.classList.contains("square")) {
-      e.target.classList.add("blue");
+      e.target.style.backgroundColor = `rgb(${generateRandomChannel()}, ${generateRandomChannel()}, ${generateRandomChannel()})`;
     }
   },
   true,
